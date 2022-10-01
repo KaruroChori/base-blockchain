@@ -23,6 +23,6 @@
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "lint": "eslint --fix --ext .ts .",
     "run": "node ./dist/app.js",
-    "simulation-suite": "rm -rf ./simulations/trace && shadow ./simulations/test.yaml > ./simulations/shadow.log -d ./simulations/trace -p 32"
+    "simulation-suite": "rm -rf ./simulations/trace && shadow ./simulations/task.yaml > ./simulations/shadow.log -d ./simulations/trace -p 32"
   }
 }
