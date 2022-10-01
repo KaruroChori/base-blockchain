@@ -13,13 +13,16 @@
     "fastify": "^4.1.0",
     "json-schema-to-typescript": "^10.1.5",
     "prettier": "^2.7.1",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "url-parse": "^1.5.10"
   },
   "scripts": {
     "gen-types": "sh ./scripts/generate-types.sh",
     "gen-apis": "sh ./scripts/generate-apis.sh",
     "build": "npx tsc && node ./dist/app.js",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "lint": "eslint --fix --ext .ts ."
+    "lint": "eslint --fix --ext .ts .",
+    "run": "node ./dist/app.js",
+    "simulation-suite": "rm -rf ./simulations/trace && shadow ./simulations/test.yaml > ./simulations/shadow.log -d ./simulations/trace -p 32"
   }
 }

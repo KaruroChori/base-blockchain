@@ -4,5 +4,7 @@
 /schemas/build/
 /src/api.auto/
 /src/types.auto/
+/simulations/trace/
+/simulations/shadow.log
 yarn.lock
 
