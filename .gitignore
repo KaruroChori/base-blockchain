@@ -6,5 +6,6 @@
 /src/types.auto/
 /simulations/trace/
 /simulations/shadow.log
+/.vscode/
 yarn.lock
 
