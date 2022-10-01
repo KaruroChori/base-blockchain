@@ -1,0 +1,25 @@
+{
+  "name": "blockchain-model",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "fastify": "^4.1.0",
+    "json-schema-to-typescript": "^10.1.5",
+    "prettier": "^2.7.1",
+    "tslint-plugin-prettier": "^2.3.0",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "gen-types": "sh ./scripts/generate-types.sh",
+    "gen-apis": "sh ./scripts/generate-apis.sh",
+    "build": "npx tsc && node ./dist/app.js",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "lint": "eslint --fix --ext .ts ."
+  }
+}

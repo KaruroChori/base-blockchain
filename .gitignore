@@ -1,0 +1,8 @@
+/node_modules/
+/dist/
+/.src.old/
+/schemas/build/
+/src/api.auto/
+/src/types.auto/
+yarn.lock
+

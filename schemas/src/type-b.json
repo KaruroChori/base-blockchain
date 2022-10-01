@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties":{
+        "type-a":{ "$ref": "type-a.yaml#/properties/bana" },
+        "forced":{
+            "type": "boolean"
+        }
+    },
+    "required":["forced"]
+}
