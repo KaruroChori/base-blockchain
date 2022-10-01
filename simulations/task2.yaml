@@ -18,14 +18,6 @@ hosts:
     network_node_id: 0
     ip_addr: 11.0.0.1
     processes:
-    - path: /usr/local/bin/node
-      args: ../../../../dist/app.js
+    - path: ~/.deno/bin/deno
+      args: run ../../../../dist/app.js
       start_time: 3s
-  # three hosts with hostnames 'client1', 'client2', and 'client3'
-  node:
-    network_node_id: 0
-    quantity: 3
-    processes:
-    - path: /usr/local/bin/node
-      args: ../../../../dist/app.js
-      start_time: 5s
