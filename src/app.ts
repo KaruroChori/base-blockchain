@@ -42,7 +42,7 @@ const start = async () => {
 const register = async () => {
     console.log("a")
 
-    const response = await fetch('http://localhost:3000/register');
+    const response = await fetch('http://seeder:3000/register');
     console.log("s")
     const data = await response.json();
     console.log(data, "e")
