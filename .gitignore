@@ -8,3 +8,4 @@
 /simulations/trace/
 /simulations/shadow.log
 yarn.lock
+/docs/.hugo_build.lock
