@@ -1,0 +1,10 @@
+/node_modules/
+/dist/
+/deps/
+/src/auto-types/
+/src/auto-schemas/
+/.vscode/
+/.env/
+/simulations/trace/
+/simulations/shadow.log
+yarn.lock
