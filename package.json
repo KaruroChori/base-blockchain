@@ -30,10 +30,11 @@
         "openapi-typescript": "^5.4.1"
     },
     "scripts": {
-        "build-all": "./scripts/pre-process.sh && ./scripts/compile.sh",
-        "build": "./scripts/compile.sh",
+        "install-deps": "bash ./scripts/install-deps.sh",
+        "build-all": "bash ./scripts/pre-process.sh && bash ./scripts/compile.sh",
+        "build": "bash ./scripts/compile.sh",
         "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
         "lint": "eslint --fix --ext .ts .",
-        "simulate": "./script/simulate.sh"
+        "simulate": "bash ./script/simulate.sh"
     }
 }
