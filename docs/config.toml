@@ -1,1 +1,13 @@
 theme = "relearn"
+disableToc = false
+[module]
+
+[markup]
+
+[markup.goldmark]
+
+[markup.goldmark.renderer]
+hardWraps = false
+unsafe = true
+
+

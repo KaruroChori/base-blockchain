@@ -4,7 +4,7 @@
     "type": "object",
     "properties": {
         "firstName": {
-            "$ref": "./schema-a.json",
+            "$ref": "./schema-a.schema.json",
             "description": "The person's first name."
         },
         "lastName": {
