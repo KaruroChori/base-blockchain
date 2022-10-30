@@ -31,10 +31,12 @@
     },
     "scripts": {
         "install-deps": "bash ./scripts/install-deps.sh",
-        "build-all": "bash ./scripts/pre-process.sh && bash ./scripts/compile.sh",
+        "full-build": "bash ./scripts/pre-process.sh && bash ./scripts/compile.sh",
         "build": "bash ./scripts/compile.sh",
+        "simulate": "bash ./script/simulate.sh",
+        "docs-build": "cd ./docs && hugo --destination ../dist/docs",
+        "docs-view": "http-server ./dist/docs -a localhost -p 8080",
         "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-        "lint": "eslint --fix --ext .ts .",
-        "simulate": "bash ./script/simulate.sh"
+        "lint": "eslint --fix --ext .ts ."
     }
 }

@@ -30,3 +30,4 @@ fi
 
 # Install NPM/YARN deps
 yarn install
+git submodule update --remote
