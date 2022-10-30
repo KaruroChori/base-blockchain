@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2019-09/schema","title":"Blockchain program model","description":"The general structure of a program to run on the blockchain validator.","type":["integer","boolean"]}

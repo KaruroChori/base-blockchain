@@ -25,6 +25,7 @@
         "typescript": "^4.8.4"
     },
     "devDependencies": {
+        "@adobe/jsonschema2md": "^7.1.2",
         "@types/koa": "^2.13.5",
         "@types/koa__router": "^12.0.0",
         "openapi-typescript": "^5.4.1"
@@ -33,8 +34,8 @@
         "install-deps": "bash ./scripts/install-deps.sh",
         "full-build": "bash ./scripts/pre-process.sh && bash ./scripts/compile.sh",
         "build": "bash ./scripts/compile.sh",
-        "simulate": "bash ./script/simulate.sh",
-        "docs-build": "cd ./docs && hugo --destination ../dist/docs",
+        "simulate": "bash ./scripts/simulate.sh",
+        "docs-build": "bash ./scripts/docs.sh",
         "docs-view": "http-server ./dist/docs -a localhost -p 8080",
         "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
         "lint": "eslint --fix --ext .ts ."
