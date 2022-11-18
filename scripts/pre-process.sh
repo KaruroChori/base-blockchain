@@ -14,7 +14,7 @@ echo "=Processing schemas="
 rm -r ./src/auto-schemas/* 2>/dev/null
 rm -r ./src/auto-types/* 2>/dev/null
 
-FILES=$(find ./specs/schemas -regex ".*\.\(json\|yaml\)");
+FILES=$(find ./specs/schemas -regex ".*\.\(schema\.json\|schema\.yaml\)");
 
 for file in $FILES; do
   FILE=${file#./specs/schemas/}
