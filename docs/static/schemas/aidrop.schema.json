@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2019-09/schema","$id":"airdrop-model","title":"Aidrop model","description":"The structure of the body for transactions.","type":"object"}

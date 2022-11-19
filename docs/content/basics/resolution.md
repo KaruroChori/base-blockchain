@@ -12,7 +12,14 @@ Consensus is an opt-in feature for the token provider, but if performed its acti
 
 ## Resolution model
 
-The action taken by a token provider as part of a resolution event, depends on the instructions given in the transaction. In principle each token provider could provide its own language to write such program, and this is possibly needed in more complex scenarios.  
-The model implemented on this prototype node is more simplistic, and can be one of the following:
+The action taken by a token provider as part of a resolution event, depends on the instructions given in the transaction. In principle each token provider could provide its own language to write such program, and this is possibly needed in more complex scenarios.
 
--
+### Scenarios
+
+A resolution model is described a list of scenarios. For each scenario a score is evaluated. The scenario with the lowest score is selected. Amongst multiple scenario with the same score, the one appearing earlier in the list is selected.  
+A scenario is defined by the following elements:
+
+- A set of parameters based on external information.
+- A set of preconditions for the scenario to be accepted.
+- An optional score function.
+- A flow vector describing how the locked token is going to be distributed.

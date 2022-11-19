@@ -1,0 +1,100 @@
+$schema: https://json-schema.org/draft/2019-09/schema
+$id : transaction-model
+title: Transaction model
+description: The structure of the body for transactions.
+type: object
+properties:
+  timestamp:
+    type: number
+    format: timestamp
+    description: The time of creation of the transaction block
+  tokenKey:
+    type: string
+    format: pubkey
+    description: The public key of the node handling this token
+  body:
+    type: [string, 'null']
+    description: All information for the different nodes on how to fulfill their end of the deal. Nullable to keep it private.
+  bodyHash:
+    type: string
+    format: hash
+    description: The hash for the body.
+  parties:
+    type: array
+    description: All parties involved in the transaction
+    minItems: 1
+    items:
+      $ref: "#/$defs/keyFilter"
+  resolution:
+    type: [array,'null']
+    description: Scenarios for resolution. Nullable to keep them private.
+    minItems: 1
+    items:
+      $ref: "#/$defs/scenario"
+  resolutionHash:
+    type: string
+    format: hash
+    description: The hash for the resolution process.
+required: [timestamp, tokenKey, parties, body, resolution, bodyHash, resolutionHash]
+$defs:
+  scenario:
+    type: object
+    properties:
+      args:
+        description: The list of values to retrieve for each node involved, so that a decision can be made.
+        type: array
+        items:
+          type: object
+          properties:
+            nodeRef:
+              type: number
+            token:
+              type: string
+              format: pubkey
+          required: [nodeRef, token]
+      flows:
+        description: How resources are going to be split from those locked, based on the positional order of nodes in parties.
+        type: array
+        items:
+          type: [number, string]
+          format: program
+      score:
+        description: The score for a certain scenario to be selected. Usually returns 1 for those which are good, 0 for those which cannot be picked.
+        type: string
+        format: program
+    required: [args, flows, score]
+      
+  keyFilter:
+    type: object
+    properties:
+      whiteList:
+        type: array
+        description: A list of keys which are accepted, regardless of further conditions except the blackList.
+        items:
+          type: string
+          format: pubkey
+      blackList:
+        type: array
+        description: A list of keys refused, regardless of further positive conditions.
+        items:
+          type: string
+          format: pubkey
+      condition:
+        description: A program which can be executed to decide if an address can be accepted. The address must not be found in the blackList.
+        type: string
+        format: program
+      lockedAmount:
+        type: number
+        description: The amount of toke this node will have to lock waiting for resolution.
+      role:
+        type: string
+        description: Metadata about the role of the node in the transaction.
+      reclaimedKey:
+        type: [string, 'null']
+        format: pubkey
+        description: The public key for the node accepting this role.
+      signature:
+        type: [string, 'null']
+        format: signature
+        description: The signature for the whole transaction body for the pubKey accepting this role. Nullable fields are not considered for the evaluation.
+    required: [lockedAmount,reclaimedKey,signature]
