@@ -5,7 +5,7 @@ canonifyURLs = false
 # required for official documentation served from subfolder
 relativeURLs = false
 
-theme = "relearn"
+theme = ["relearn","reveal-hugo"]
 
 languageCode = "en"
 defaultContentLanguage = "en"
@@ -41,6 +41,12 @@ title = "NAME Network"
   home = ["HTML", "RSS", "PRINT", "JSON"]
   section = ["HTML", "RSS", "PRINT"]
   page = ["HTML", "RSS", "PRINT"]
+
+
+[outputFormats.Reveal]
+  baseName = "index"
+  mediaType = "text/html"
+  isHTML = true
 
 [markup]
   [markup.highlight]
